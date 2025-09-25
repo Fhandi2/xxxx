@@ -1,0 +1,393 @@
+:root {
+  --text-color: rgb(231, 231, 231);
+  --back-color: rgba(18, 18, 18, 1);
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white;
+    color: var(--back-color);
+    font-family: "Poppins", sans-serif;
+}
+/* ================================================================== */
+/* ================================================================== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 3rem;
+    background: rgba(255, 255, 255, 0.1); /* transparan */
+    backdrop-filter: blur(10px); /* blur background */
+    -webkit-backdrop-filter: blur(5px); /* buat Safari */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* shadow lembut */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.navbar i {
+    font-size: 2rem;
+}
+
+.navbar .menu-nav {
+    display: flex;
+    gap: 1rem;
+}
+
+.navbar .menu-nav a {
+    font-size: 1.3rem;
+    cursor: pointer;
+    padding: 0 0.4rem;
+    transition: 0.7s ease;
+    border-radius: 1rem;
+}
+
+.navbar .menu-nav a:hover {
+    color: var(--back-color);
+    background-color: rgba(253, 204, 81, 1);
+    border-radius: 1rem;
+}
+/* ================================================================== */
+/* ================================================================== */
+.side-nav {
+    background-color: var(--back-color);
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    margin-top: 6.2rem;
+    padding: 5rem;
+    z-index: 100;
+    text-align: center;
+    transition: 0.6s ease;
+}
+
+.active {
+    right: 0;
+}
+
+.side-nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    /* background-color: brown; */
+}
+
+.side-nav ul li{
+    text-decoration: none;
+    list-style: none;
+    background-color: rgb(43, 43, 43);
+    padding: 1rem 2rem;
+    border-radius: 1.4rem;
+    transition: 0.5s ease;
+}
+
+.side-nav ul li:hover {
+    background-color: rgb(27, 27, 27);
+}
+/* ================================================================== */
+/* ================================================================== */
+
+.page-one{
+    text-align: center;
+    width: 100%;
+    padding: 2rem;
+    margin-top: 6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    background-image: url(back1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    mask-image: linear-gradient(to right, transparent, #000 10% 90%, transparent);
+}
+
+.page-one h1 {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(1.8rem, calc(7vw + 1rem), 5rem);
+}
+
+.page-one p{
+    font-family: "Lexend Deca", sans-serif;
+    font-size: clamp(1rem, 2vw, 1.5rem)
+}
+
+button {
+    padding: 0.7rem 5rem;
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: rgba(253, 204, 81, 1);
+    margin-top: 1rem;
+}
+/* ============================================= */
+
+.page-two {
+    margin: 2rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.grid .card {
+    background-color: var(--back-color);
+    text-align: center;
+    padding: 2rem 1rem;
+    border-radius: 10px;
+    transition: 0.3s linear;
+    color: var(--text-color);
+}
+
+.grid .card i {
+    font-size: 3rem;
+}
+
+.grid .card p {
+    margin-top: 1rem;
+}
+
+.grid .card:hover {
+    background-color: rgba(253, 204, 81, 1);
+    cursor: pointer;
+    color: var(--back-color);
+}
+/* ======================================== */
+
+.page-three {
+    margin: 3rem;
+}
+
+.wrapper {
+      display: flex;
+      align-items: center;
+      /* border: solid red 1px; */
+      border-radius: 20px;
+    }
+    
+    .scroll-container {
+      display: flex;
+      align-items: center;
+      overflow-x: auto;
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* IE & Edge */
+      /* Jangan pakai scroll-behavior di sini */
+      /* mask-image: linear-gradient(to right, transparent, #000 10% 90%, transparent); */
+    }
+
+    .scroll-container::-webkit-scrollbar {
+      display: none; /* Chrome, Safari */
+    }
+
+    .item {
+      flex: 0 0 auto;
+      margin: 5px;
+      padding: 8px 16px;
+      background: #333;
+      border-radius: 20px;
+      cursor: pointer;
+      user-select: none;
+      white-space: nowrap;
+      height: 25rem;
+      width: 15rem;
+      transition: background 0.3s;
+    }
+
+    .item:hover {
+      background: #555;
+    }
+
+    .nav-btn {
+      background: #222;
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 18px;
+      border-radius: 5rem;
+      margin: 0 5px;
+      z-index: 1;
+    }
+
+    .left {
+        display: none;
+    }
+
+    .right {
+        display: none;
+    }
+
+/* ======================================== */
+.page-four {
+    margin: 3rem;
+}
+
+/* ======================================== */
+
+.page-five {
+    margin: 3rem;
+}
+
+.image-info {
+    width: 100%;
+    height: 18rem;
+    background-color: brown;
+    border-radius: 10px;
+}
+
+/* ======================================== */
+
+.page-six {
+    margin: 3rem;
+}
+
+/* ======================================== */
+
+.page-seven {
+    margin: 3rem;
+}
+
+.grid-three {
+    /* border: solid red 1px; */
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+}
+
+.grid-three::-webkit-scrollbar {
+    display: none;
+}
+
+.grid-three .subject {
+    background-color: brown;
+    border-radius: 10px;
+    width: 10rem;
+    height: 15rem;
+    flex-shrink: 0;
+}
+
+/* ======================================== */
+
+.footer {
+    margin: 3rem;
+    text-align: center;
+}
+
+.footer img {
+    width: 10rem;
+}
+
+.footer .link a i {
+    color: var(--text-color);
+    font-size: 1.5rem;
+}
+
+/* =============================================================== */
+/* =============================================================== */
+/* =============================================================== */
+
+@media (max-width: 575.98px) {
+    .navbar .menu-nav {
+        display: none;
+    }
+
+    .page-one {
+    background-image: url(back3.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    }
+}
+
+@media (min-width: 576px) and (max-width:767.98px){
+    .navbar .menu-nav {
+        display: none;
+    }
+
+    .image-info {
+    height: 25rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width:991.98px) {
+    .navbar i {
+        display: none;
+    }
+
+    .content {
+        margin-left: 6rem;
+        margin-right: 6rem;
+    }
+
+    .image-info {
+    height: 28rem;
+    }
+}
+
+@media (min-width: 992px) and (max-width:1199.98px) {
+    .navbar i {
+        display: none;
+    }
+
+    .content {
+        margin-left: 8rem;
+        margin-right: 8rem;
+    }
+
+    .page-three .grid-two {
+        justify-content: center;
+    }
+
+    .image-info {
+    height: 28rem;
+    }
+}
+
+@media (min-width: 1200px) and (max-width:1399.98px) {
+    .navbar i {
+        display: none;
+    }
+
+    .content {
+        margin-left: 18rem;
+        margin-right: 18rem;
+    }
+
+    .page-three .grid-two {
+        justify-content: center;
+    }
+
+    .image-info {
+    height: 28rem;
+    }
+}
+
+@media (min-width: 1400px) {
+    .navbar i {
+        display: none;
+    }
+
+    .content {
+        margin-left: 35rem;
+        margin-right: 35rem;
+    }
+
+    .image-info {
+    height: 28rem;
+    }
+}
