@@ -19,11 +19,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem 3rem;
-    background: rgba(255, 255, 255, 0.1); /* transparan */
-    backdrop-filter: blur(10px); /* blur background */
-    -webkit-backdrop-filter: blur(5px); /* buat Safari */
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* shadow lembut */
+    padding: clamp(8px, 1vw, 20px) clamp(12px, 4vw, 40px);
+    background-color: white;
     position: fixed;
     top: 0;
     left: 0;
@@ -31,8 +28,12 @@ body {
     z-index: 10;
 }
 
+.navbar img {
+    width: clamp(18px, 10vw, 50px);
+}
+
 .navbar i {
-    font-size: 2rem;
+    font-size: clamp(16px, 8vw, 40px);
 }
 
 .navbar .menu-nav {
@@ -56,17 +57,20 @@ body {
 /* ================================================================== */
 /* ================================================================== */
 .side-nav {
-    background-color: var(--back-color);
+    background-color: white;
     width: 100%;
     height: 100vh;
     position: fixed;
     top: 0;
     right: -100%;
-    margin-top: 6.2rem;
+    margin-top: 5rem;
     padding: 5rem;
     z-index: 100;
     text-align: center;
     transition: 0.6s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .active {
@@ -84,6 +88,7 @@ body {
     text-decoration: none;
     list-style: none;
     background-color: rgb(43, 43, 43);
+    color: white;
     padding: 1rem 2rem;
     border-radius: 1.4rem;
     transition: 0.5s ease;
@@ -96,45 +101,42 @@ body {
 /* ================================================================== */
 
 .page-one{
-    text-align: center;
-    width: 100%;
-    padding: 2rem;
-    margin-top: 6rem;
+    min-height: 40vh; /* hero penuh 1 layar */
     display: flex;
     flex-direction: column;
+    justify-content: center; /* teks + tombol ketengah */
     align-items: center;
+    text-align: center;
     gap: 5px;
+    margin-top: 5vw;
+    padding: 2rem;
     background-image: url(back1.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom;
-    mask-image: linear-gradient(to right, transparent, #000 10% 90%, transparent);
+    /* mask-image: linear-gradient(to right, transparent, #000 10% 90%, transparent); */
 }
 
 .page-one h1 {
     font-family: "Poppins", sans-serif;
-    font-size: clamp(1.8rem, calc(7vw + 1rem), 5rem);
+    font-size: clamp(16px, 9vw, 50px);
 }
 
 .page-one p{
     font-family: "Lexend Deca", sans-serif;
-    font-size: clamp(1rem, 2vw, 1.5rem)
+    font-size: clamp(2px, 5vw, 16px);
 }
 
 button {
-    padding: 0.7rem 5rem;
+    padding: clamp(8px, 1vw, 16px) clamp(16px, 4vw, 32px);
     font-family: "Poppins", sans-serif;
     font-size: 1rem;
     border: none;
-    border-radius: 0.5rem;
+    border-radius: 2rem;
     background-color: rgba(253, 204, 81, 1);
     margin-top: 1rem;
 }
 /* ============================================= */
-
-.page-two {
-    margin: 2rem;
-}
 
 .grid {
     display: grid;
@@ -159,6 +161,7 @@ button {
 
 .grid .card p {
     margin-top: 1rem;
+    font-size: clamp(10px, 2vw, 18px)
 }
 
 .grid .card:hover {
@@ -167,11 +170,6 @@ button {
     color: var(--back-color);
 }
 /* ======================================== */
-
-.page-three {
-    margin: 3rem;
-}
-
 .wrapper {
       display: flex;
       align-items: center;
@@ -232,35 +230,16 @@ button {
     }
 
 /* ======================================== */
-.page-four {
-    margin: 3rem;
-}
-
 /* ======================================== */
-
-.page-five {
-    margin: 3rem;
-}
 
 .image-info {
     width: 100%;
     height: 18rem;
     background-color: brown;
-    border-radius: 10px;
 }
 
 /* ======================================== */
-
-.page-six {
-    margin: 3rem;
-}
-
 /* ======================================== */
-
-.page-seven {
-    margin: 3rem;
-}
-
 .grid-three {
     /* border: solid red 1px; */
     width: 100%;
@@ -293,7 +272,7 @@ button {
 }
 
 .footer .link a i {
-    color: var(--text-color);
+    color: var(--back-color);
     font-size: 1.5rem;
 }
 
@@ -306,11 +285,34 @@ button {
         display: none;
     }
 
-    .page-one {
-    background-image: url(back3.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: bottom;
+    .page-three h2 {
+        padding: 0 1rem;
+        /* font-size: clamp(14px, 5vw, 18px); */
+    }
+    .item {
+        height: 15rem;
+        width: 9rem;
+        border-radius: 10px;
+    }
+
+    .page-four {
+        margin: 1.5rem 1rem;
+    }
+
+    .page-five {
+        margin: 1.5rem 1rem;
+    }
+
+    .page-six {
+        margin: 1.5rem 1rem;
+    }
+
+    .page-seven h2 {
+        margin: 0 1rem;
+    }
+
+    .side-nav {
+        margin-top: 12.5vw;
     }
 }
 
@@ -319,9 +321,36 @@ button {
         display: none;
     }
 
-    .image-info {
-    height: 25rem;
+    .page-three h2 {
+        padding: 0 1rem;
+        /* font-size: clamp(14px, 5vw, 18px); */
     }
+    .item {
+        height: 15rem;
+        width: 12rem;
+        border-radius: 10px;
+    }
+
+    .page-four {
+        margin: 1.5rem 1rem;
+    }
+
+    .page-five {
+        margin: 1.5rem 1rem;
+    }
+
+    .page-six {
+        margin: 1.5rem 1rem;
+    }
+
+    .page-seven h2 {
+        margin: 0 1rem;
+    }
+
+    .side-nav {
+        margin-top: 12.5vw;
+    }
+
 }
 
 @media (min-width: 768px) and (max-width:991.98px) {
@@ -336,6 +365,30 @@ button {
 
     .image-info {
     height: 28rem;
+    }
+
+    .page-two {
+        margin-top: 2rem;
+    }
+
+    .page-three {
+        margin-top: 2rem;
+    }
+
+    .page-four {
+        margin-top: 2rem;
+    }
+
+    .page-five {
+        margin-top: 2rem;
+    }
+
+    .page-six {
+        margin-top: 2rem;
+    }
+
+    .page-seven {
+        margin-top: 2rem;
     }
 }
 
@@ -356,6 +409,30 @@ button {
     .image-info {
     height: 28rem;
     }
+
+    .page-two {
+        margin-top: 2rem;
+    }
+
+    .page-three {
+        margin-top: 2rem;
+    }
+
+    .page-four {
+        margin-top: 2rem;
+    }
+
+    .page-five {
+        margin-top: 2rem;
+    }
+
+    .page-six {
+        margin-top: 2rem;
+    }
+
+    .page-seven {
+        margin-top: 2rem;
+    }
 }
 
 @media (min-width: 1200px) and (max-width:1399.98px) {
@@ -375,6 +452,30 @@ button {
     .image-info {
     height: 28rem;
     }
+
+    .page-two {
+        margin-top: 2rem;
+    }
+
+    .page-three {
+        margin-top: 2rem;
+    }
+
+    .page-four {
+        margin-top: 2rem;
+    }
+
+    .page-five {
+        margin-top: 2rem;
+    }
+
+    .page-six {
+        margin-top: 2rem;
+    }
+
+    .page-seven {
+        margin-top: 2rem;
+    }
 }
 
 @media (min-width: 1400px) {
@@ -389,5 +490,29 @@ button {
 
     .image-info {
     height: 28rem;
+    }
+
+    .page-two {
+        margin-top: 2rem;
+    }
+
+    .page-three {
+        margin-top: 2rem;
+    }
+
+    .page-four {
+        margin-top: 2rem;
+    }
+
+    .page-five {
+        margin-top: 2rem;
+    }
+
+    .page-six {
+        margin-top: 2rem;
+    }
+
+    .page-seven {
+        margin-top: 2rem;
     }
 }
